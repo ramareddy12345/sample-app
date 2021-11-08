@@ -1,0 +1,28 @@
+.avatar-icon {
+    display: inline-block;
+    background-color: #524a4a;
+    border-radius: 50%;
+    color: #fff;
+    overflow: hidden;
+    background-image: none;
+
+    &.sm {
+        height: 35px;
+        width: 35px;
+        font-size: 1.25rem;;
+    }
+
+    & .avatar-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    & .initials {
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+        flex: 1 1 0%;
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "jsx": "react",
+        "noEmit": true,
+        "strict": true,
+        "isolatedModules": false
+    },
+    "include": [
+        "client/",
+        "./client/**/*.ts",
+        "./client/**/*.tx"
+    ]
+}

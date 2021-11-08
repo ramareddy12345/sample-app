@@ -1,0 +1,42 @@
+.search-bar {
+   --size: 30px;
+    display: flex;
+    border-radius: 50px;
+    height: var(--size);
+    width: var(--size);
+    padding: 3px;
+    position: relative;
+    transition: width 300ms ease-in-out;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: #B5A6A6;
+
+    &__input {
+        font-size: 1rem;
+        padding: 0 .5em;
+        border: 0;
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        background: transparent;
+        color: #fff;
+
+        &:focus {
+            outline: 0;
+
+        }
+    }
+
+    &__submit {
+        font-size: 1rem;
+        cursor: pointer;
+        border: 0;
+        background: transparent;
+        border-radius: 50%;
+        background: transparent;
+        width: calc(var(--size) - 6px);
+        height: calc(var(--size) - 6px);
+        transition: background 150ms ease-in-out;
+    }
+}

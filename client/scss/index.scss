@@ -1,0 +1,57 @@
+@import 'fonts';
+@import 'avatar';
+@import 'sidebar';
+@import 'searchbar';
+
+html {
+    overflow-x: hidden;
+}
+
+.container {
+    overflow: hidden;
+}
+
+#insights-page {
+    position: relative;
+    height: 100%;
+
+    & .title {
+        padding: 10px;
+
+        .icon {
+            color: #dad1d1;
+            background-color: #4033b4;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+    }
+
+    & .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    & .card {
+        margin: 10px;
+        max-height: 400px;
+        max-width: 500px;
+        min-width: 350px;
+        width: 50%;
+    }
+}
+
+main.page-content {
+    position: relative;
+    left: 50px;
+    width: calc(100vw - 50px);
+    min-height: 100vh;
+    background-color: #d9e1e1;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-size: 2rem;
+}
