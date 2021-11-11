@@ -13,7 +13,7 @@ const VehicleInsights = () => {
         getRequest(`${window.location.origin}/vehicles`).then((data) => {
             const transformedData = data.data.map(item => {
                 return {
-                    name: item.vehicleType,
+                    name: item.VehicleType,
                     y: item.total
                 }
             });
