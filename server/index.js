@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use(instance);
-
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log('Server started in PORT:', 3000);
 });
