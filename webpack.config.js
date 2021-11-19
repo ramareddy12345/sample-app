@@ -1,10 +1,12 @@
-const webpack = require('webpack');
+/* eslint @typescript-eslint/no-var-requires: 0 */
+
+// const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const path = require('path');
-const publicPath = '';
+const publicPath = '/';
 
 module.exports = {
     entry: {
@@ -13,7 +15,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: publicPath,
-        filename: '[name].[contenthash].js'
+        filename: '[name].[contenthash].js',
+        chunkFilename: '[name].bundle.js',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']

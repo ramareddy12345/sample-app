@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { Options as ChartOptions, SeriesVariablepieOptions, XAxisOptions } from 'highcharts';
 import { FiSearch } from 'react-icons/fi';
 
-import { Chart } from '../../components/Chart';
+// import { Chart } from '../../components/Chart';
 import { getRequest } from '../utils/service';
 import { prepareBarChartConfig, preparePieChartConfig } from '../utils/chartUtils';
+
+const Chart = React.lazy(() => {
+    return import(/*webpackChunkName: "Chatschunk"*/ '../../components/Chart');
+});
 
 const VehicleInsights = () => {
     const [config, setConfig] = useState<ChartOptions>(preparePieChartConfig('Vehicle type', 'Total', []));
@@ -35,7 +39,9 @@ const VehicleInsights = () => {
     }, []);
 
     return (
-        <Chart id="vehicle-insights" config={config}/>
+        <Suspense fallback={() => <div>Loading...</div>}>
+            <Chart id="vehicle-insights" config={config}/>
+        </Suspense>
     );
 };
 
@@ -45,7 +51,7 @@ const HomeMortgageDetails = () => {
     useEffect(() => {
         getRequest(`${window.location.origin}/home-mortgage`).then((data) => {
             const categories = new Set();
-            let values:number[] = [];
+            const values:number[] = [];
 
             data.data.forEach((item) => {
                 categories.add(item.pyStatusWork);
@@ -66,7 +72,9 @@ const HomeMortgageDetails = () => {
     }, []);
 
     return (
-        <Chart id="home-mortgage" config={config}/>
+        <Suspense fallback={() => <div>Loading...</div>}>
+            <Chart id="home-mortgage" config={config}/>
+        </Suspense>
     );
 };
 

@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Avatar = (props) => {
+interface IAvatarProps {
+    initials: string;
+}
+
+const Avatar = (props: IAvatarProps) => {
     return (
         <div className="avatar-icon sm">
             <div className="avatar-container">

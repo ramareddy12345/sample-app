@@ -7,11 +7,11 @@ export interface IChartProps {
     config: Highcharts.Options;
 }
 
-export const Chart = (props: IChartProps) => {
+const Chart = (props: IChartProps) => {
     const chartRef = useRef(null);
 
     const updateConfig = ( config) => {
-        if (!config.hasOwnProperty('chart')) {
+        if (!Object.prototype.hasOwnProperty.call(config, "chart")) {
             config['chart'] = {};
         }
     }
@@ -47,3 +47,5 @@ export const Chart = (props: IChartProps) => {
         <div id={props.id} style={{ height: '100%', width: '100%'}}></div>
     );
 }
+
+export default Chart;
