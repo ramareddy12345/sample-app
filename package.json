@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:server": "node ./server/index.js",
-    "start": "npm run build:local && node ./server/start.js",
+    "start": "node ./server/start.js",
     "build:local": "npm run build:lint && webpack --mode=development --config webpack.config.js",
     "build:lint": "eslint --ext .ts,.tsx ./client",
+    "heroku-prebuild": "npm install --only=dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Satyasairamareddy",
