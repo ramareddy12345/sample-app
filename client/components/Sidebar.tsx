@@ -1,7 +1,7 @@
 import React from 'react';
-import { GiPegasus } from 'react-icons/gi';
+import { GiPegasus } from '@react-icons/all-files/gi/GiPegasus';
 import { Link, NavLink } from 'react-router-dom';
-import { IconContext } from 'react-icons';
+import { IconContext } from '@react-icons/all-files';
 
 import UserInfo from './UserInfo';
 import Search from './Search';

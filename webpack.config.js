@@ -1,9 +1,9 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 
-// const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const path = require('path');
 const publicPath = '/';
@@ -12,16 +12,18 @@ module.exports = {
     entry: {
         index: ['./client/scss/index.scss', './client/entry.tsx']
     },
+    
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: publicPath,
         filename: '[name].[contenthash].js',
         chunkFilename: '[name].bundle.js',
     },
+
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
-    devtool: 'source-map',
+
     module: {
         rules: [
             {
@@ -75,6 +77,7 @@ module.exports = {
                 '**/*'
             ]
         }),
+        // new BundleAnalyzerPlugin(),
 
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'

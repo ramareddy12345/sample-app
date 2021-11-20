@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { Options as ChartOptions, SeriesVariablepieOptions, XAxisOptions } from 'highcharts';
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch } from '@react-icons/all-files/fi/FiSearch';
 
 // import { Chart } from '../../components/Chart';
 import { getRequest } from '../utils/service';

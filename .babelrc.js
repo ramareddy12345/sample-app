@@ -1,9 +1,12 @@
-module.exports = (api) => ({
+module.exports = (api) => {
+    api.cache(true);
+    
+return {
     presets: [
         [
             '@babel/preset-env',
             {
-                modules: api.env() === 'esm' ? false : 'commonjs',
+                modules: false,
                 targets: {
                     browsers: ['last 4 versions', 'not ie <= 10']
                 },
@@ -15,4 +18,5 @@ module.exports = (api) => ({
     ],
 
     plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-syntax-dynamic-import']
-});
+}
+};

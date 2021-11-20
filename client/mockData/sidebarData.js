@@ -1,8 +1,9 @@
 import React from 'react';
-import { AiFillHome } from 'react-icons/ai';
-import { IoMdAdd, IoMdTime } from 'react-icons/io';
-import { MdOutlineTravelExplore } from 'react-icons/md';
-import { SiSmartthings } from 'react-icons/si';
+import { AiFillHome } from '@react-icons/all-files/ai/AiFillHome';
+import { IoMdAdd } from '@react-icons/all-files/io/IoMdAdd';
+import { IoMdTime } from '@react-icons/all-files/io/IoMdTime';
+import { MdExplore } from '@react-icons/all-files/md/MdExplore';
+import { SiSmartthings } from '@react-icons/all-files/si/SiSmartthings';
 
 export const sidebarData = [
     {
@@ -20,7 +21,7 @@ export const sidebarData = [
     {
         title: 'Explore Data',
         path: '/explore',
-        icon: <MdOutlineTravelExplore/>,
+        icon: <MdExplore/>,
         className: 'nav-text'
     },
     {
